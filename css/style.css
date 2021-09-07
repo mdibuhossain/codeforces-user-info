@@ -1,0 +1,11 @@
+/* main css */
+main{
+    position: absolute;
+    z-index: 100000;
+    left: 0;
+    right: 0;
+}
+.user-avatar img{
+    height: 300px;
+    width: auto;
+}

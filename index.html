@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            transition: .1s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <section class="container mt-3">
+            <h1 class="text-center mb-3">
+                Codeforces users summary
+            </h1>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" id="handle-value" class="form-control" placeholder="handle" aria-label="handle"
+                        aria-describedby="button-addon2">
+                    <button class="btn btn-primary" type="submit" id="search-user">Search</button>
+                </div>
+            </form>
+        </section>
+        <section id="container" class="container py-3">
+            <div class="d-flex justify-content-center align-items-center flex-wrap">
+                <!-- <div class="mx-3">
+                    <div class="shadow">
+                        <img class="img-fluid" src="https://userpic.codeforces.org/1399603/title/cc1e3a53d4401b0c.jpg">
+                    </div>
+                </div>
+                <div class="mx-3">
+                    <div class="mt-md-0 mt-4">
+                        <p class="fs-3 m-0">Handle: <span id="handle-name">iibrahim</span></p>
+                        <p class="fs-3 m-0">Name: <span id="full-name">Ibrahim Hossain</span></p>
+                        <p class="fs-3 m-0">Max rating: <span id="max-rating">1383</span></p>
+                        <p class="fs-3 m-0">Current rating: <span id="current-rating">866</span></p>
+                        <p class="fs-3 m-0">Rank: <span id="current-rank">Newbie</span></p>
+                        <p class="fs-3 m-0">Organization: <span id="organization-name">BSMRSTU</span></p>
+                        <p class="fs-3 m-0">Friends: <span id="total-friends">26</span></p>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
