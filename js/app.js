@@ -29,7 +29,7 @@ const processDatatoUI = data => {
             </div>
             <div class="mx-3">
                 <div class="mt-md-0 mt-4">
-                    <p class="fs-3 m-0">Handle: <span id="handle-name">${data.result[0].handle}</span></p>
+                    <p class="fs-3 m-0">Handle: <span id="handle-name"><strong>${data.result[0].handle}</strong></span></p>
                     <p class="fs-3 m-0">Name: <span id="full-name">${data.result[0].firstName + ' ' + data.result[0].lastName}</span></p>
                     <p class="fs-3 m-0">Max rating: <span id="max-rating">${data.result[0].maxRating}</span></p>
                     <p class="fs-3 m-0">Current rating: <span id="current-rating"><strong>${data.result[0].rating}</strong></span></p>
@@ -44,30 +44,37 @@ const processDatatoUI = data => {
         if (data.result[0].rating >= 2400) {
             const currentRating = document.getElementById('current-rating').style.color = 'red';
             const currentRank = document.getElementById('current-rank').style.color = 'red';
+            const handleName = document.getElementById('handle-name').style.color = 'red';
         }
         else if (data.result[0].rating >= 2100) {
             const currentRating = document.getElementById('current-rating').style.color = 'orange';
             const currentRank = document.getElementById('current-rank').style.color = 'oragne';
+            const handleName = document.getElementById('handle-name').style.color = 'orange';
         }
         else if (data.result[0].rating >= 1900) {
             const currentRating = document.getElementById('current-rating').style.color = 'violet';
             const currentRank = document.getElementById('current-rank').style.color = 'violet';
+            const handleName = document.getElementById('handle-name').style.color = 'violet';
         }
         else if (data.result[0].rating >= 1600) {
             const currentRating = document.getElementById('current-rating').style.color = 'blue';
             const currentRank = document.getElementById('current-rank').style.color = 'blue';
+            const handleName = document.getElementById('handle-name').style.color = 'blue';
         }
         else if (data.result[0].rating >= 1400) {
             const currentRating = document.getElementById('current-rating').style.color = 'cyan';
             const currentRank = document.getElementById('current-rank').style.color = 'cyan';
+            const handleName = document.getElementById('handle-name').style.color = 'cyan';
         }
         else if (data.result[0].rating >= 1200) {
             const currentRating = document.getElementById('current-rating').style.color = 'green';
             const currentRank = document.getElementById('current-rank').style.color = 'green';
+            const handleName = document.getElementById('handle-name').style.color = 'green';
         }
         else {
             const currentRating = document.getElementById('current-rating').style.color = 'gray';
             const currentRank = document.getElementById('current-rank').style.color = 'gray';
+            const handleName = document.getElementById('handle-name').style.color = 'gray';
         }
         // const handleName = document.getElementById('handle-name');
         // const fullName = document.getElementById('full-name');
