@@ -34,7 +34,7 @@ const processDatatoUI = data => {
                     <p class="fs-3 m-0">Max rating: <span id="max-rating">${data.result[0].maxRating}</span></p>
                     <p class="fs-3 m-0">Current rating: <span id="current-rating"><strong>${data.result[0].rating}</strong></span></p>
                     <p class="fs-3 m-0">Rank: <span id="current-rank"><strong>${data.result[0].rank}</strong></span></p>
-                    <p class="fs-3 m-0">Country: <span id="organization-name">${data.result[0].organization}</span></p>
+                    <p class="fs-3 m-0">Organization: <span id="organization-name">${data.result[0].organization}</span></p>
                     <!-- <p class="fs-3 m-0">Friends: <span id="total-friends">${data.result[0].friendOfCount}</span></p> -->
                     <p class="fs-3 m-0">Country: <span id="country-name">${data.result[0].country}</span></p>
                 </div>
