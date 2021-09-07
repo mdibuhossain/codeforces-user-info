@@ -41,40 +41,51 @@ const processDatatoUI = data => {
             </div>
         `;
         container.appendChild(content);
-        if (data.result[0].rating >= 2400) {
-            const currentRating = document.getElementById('current-rating').style.color = 'red';
-            const currentRank = document.getElementById('current-rank').style.color = 'red';
-            const handleName = document.getElementById('handle-name').style.color = 'red';
+        const handleName = document.getElementById('handle-name');
+        const currentRating = document.getElementById('current-rating')
+        const currentRank = document.getElementById('current-rank')
+        if (data.result[0].rating >= 3000) {
+            currentRating.style.color = 'red';
+            currentRank.style.color = 'red';
+            handleName.innerHTML = `
+                <span id="handle-name"><strong><span style="color: black">${data.result[0].handle.substr(0, 1)}</span>${data.result[0].handle.substr(1)}</strong></span>
+            `;
+            handleName.style.color = 'red';
+        }
+        else if (data.result[0].rating >= 2400) {
+            currentRating.style.color = 'red';
+            currentRank.style.color = 'red';
+            handleName.style.color = 'red';
         }
         else if (data.result[0].rating >= 2100) {
-            const currentRating = document.getElementById('current-rating').style.color = 'orange';
-            const currentRank = document.getElementById('current-rank').style.color = 'oragne';
-            const handleName = document.getElementById('handle-name').style.color = 'orange';
+            currentRating.style.color = 'orange';
+            currentRank.style.color = 'oragne';
+            handleName.style.color = 'orange';
         }
         else if (data.result[0].rating >= 1900) {
-            const currentRating = document.getElementById('current-rating').style.color = 'violet';
-            const currentRank = document.getElementById('current-rank').style.color = 'violet';
-            const handleName = document.getElementById('handle-name').style.color = 'violet';
+            currentRating.style.color = 'violet';
+            currentRank.style.color = 'violet';
+            handleName.style.color = 'violet';
         }
         else if (data.result[0].rating >= 1600) {
-            const currentRating = document.getElementById('current-rating').style.color = 'blue';
-            const currentRank = document.getElementById('current-rank').style.color = 'blue';
-            const handleName = document.getElementById('handle-name').style.color = 'blue';
+            currentRating.style.color = 'blue';
+            currentRank.style.color = 'blue';
+            handleName.style.color = 'blue';
         }
         else if (data.result[0].rating >= 1400) {
-            const currentRating = document.getElementById('current-rating').style.color = 'cyan';
-            const currentRank = document.getElementById('current-rank').style.color = 'cyan';
-            const handleName = document.getElementById('handle-name').style.color = 'cyan';
+            currentRating.style.color = 'cyan';
+            currentRank.style.color = 'cyan';
+            handleName.style.color = 'cyan';
         }
         else if (data.result[0].rating >= 1200) {
-            const currentRating = document.getElementById('current-rating').style.color = 'green';
-            const currentRank = document.getElementById('current-rank').style.color = 'green';
-            const handleName = document.getElementById('handle-name').style.color = 'green';
+            currentRating.style.color = 'green';
+            currentRank.style.color = 'green';
+            handleName.style.color = 'green';
         }
         else {
-            const currentRating = document.getElementById('current-rating').style.color = 'gray';
-            const currentRank = document.getElementById('current-rank').style.color = 'gray';
-            const handleName = document.getElementById('handle-name').style.color = 'gray';
+            currentRating.style.color = 'gray';
+            currentRank.style.color = 'gray';
+            handleName.style.color = 'gray';
         }
         // const handleName = document.getElementById('handle-name');
         // const fullName = document.getElementById('full-name');
