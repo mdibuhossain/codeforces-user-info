@@ -14,6 +14,77 @@ const loadData = async inputHandle => {
     processDatatoUI(jsonData);
 }
 
+const changeTextColor = (color, checkMax) => {
+    const handleName = document.getElementById('handle-name');
+    const maxRating = document.getElementById('max-rating');
+    const currentRating = document.getElementById('current-rating');
+    const currentRank = document.getElementById('current-rank');
+    if (checkMax)
+        maxRating.style.color = color;
+    else {
+        handleName.style.color = color;
+        currentRating.style.color = color;
+        currentRank.style.color = color;
+    }
+}
+
+const checkCurrentRating = (userInfo) => {
+    if (userInfo.rating >= 3000) {
+        changeTextColor('red');
+        document.getElementById('handle-name').innerHTML = `
+        <span id="handle-name"><strong><span style="color: black">${userInfo.handle.substr(0, 1)}</span>${userInfo.handle.substr(1)}</strong></span>
+        `;
+    }
+    else if (userInfo.rating >= 2400) {
+        changeTextColor('red');
+    }
+    else if (userInfo.rating >= 2100) {
+        changeTextColor('orange');
+    }
+    else if (userInfo.rating >= 1900) {
+        changeTextColor('violet');
+    }
+    else if (userInfo.rating >= 1600) {
+        changeTextColor('blue');
+    }
+    else if (userInfo.rating >= 1400) {
+        changeTextColor('cyan');
+    }
+    else if (userInfo.rating >= 1200) {
+        changeTextColor('green');
+    }
+    else {
+        changeTextColor('gray');
+    }
+}
+
+const checkMaxRating = (maxRatingValue) => {
+    if (maxRatingValue >= 3000) {
+        changeTextColor('red', true);
+    }
+    else if (maxRatingValue >= 2400) {
+        changeTextColor('red', true);
+    }
+    else if (maxRatingValue >= 2100) {
+        changeTextColor('orange', true);
+    }
+    else if (maxRatingValue >= 1900) {
+        changeTextColor('violet', true);
+    }
+    else if (maxRatingValue >= 1600) {
+        changeTextColor('blue', true);
+    }
+    else if (maxRatingValue >= 1400) {
+        changeTextColor('cyan', true);
+    }
+    else if (maxRatingValue >= 1200) {
+        changeTextColor('green', true);
+    }
+    else {
+        changeTextColor('gray', true);
+    }
+}
+
 const processDatatoUI = data => {
     const container = document.getElementById('container');
     container.textContent = '';
@@ -31,7 +102,7 @@ const processDatatoUI = data => {
                 <div class="mt-md-0 mt-4">
                     <p class="fs-3 m-0">Handle: <span id="handle-name"><strong>${data.result[0].handle}</strong></span></p>
                     <p class="fs-3 m-0">Name: <span id="full-name">${data.result[0].firstName + ' ' + data.result[0].lastName}</span></p>
-                    <p class="fs-3 m-0">Max rating: <span id="max-rating">${data.result[0].maxRating}</span></p>
+                    <p class="fs-3 m-0">Max rating: <span id="max-rating"><strong>${data.result[0].maxRating}</strong></span></p>
                     <p class="fs-3 m-0">Current rating: <span id="current-rating"><strong>${data.result[0].rating}</strong></span></p>
                     <p class="fs-3 m-0">Rank: <span id="current-rank"><strong>${data.result[0].rank}</strong></span></p>
                     <p class="fs-3 m-0">Organization: <span id="organization-name">${data.result[0].organization}</span></p>
@@ -41,52 +112,9 @@ const processDatatoUI = data => {
             </div>
         `;
         container.appendChild(content);
-        const handleName = document.getElementById('handle-name');
-        const currentRating = document.getElementById('current-rating')
-        const currentRank = document.getElementById('current-rank')
-        if (data.result[0].rating >= 3000) {
-            currentRating.style.color = 'red';
-            currentRank.style.color = 'red';
-            handleName.innerHTML = `
-                <span id="handle-name"><strong><span style="color: black">${data.result[0].handle.substr(0, 1)}</span>${data.result[0].handle.substr(1)}</strong></span>
-            `;
-            handleName.style.color = 'red';
-        }
-        else if (data.result[0].rating >= 2400) {
-            currentRating.style.color = 'red';
-            currentRank.style.color = 'red';
-            handleName.style.color = 'red';
-        }
-        else if (data.result[0].rating >= 2100) {
-            currentRating.style.color = 'orange';
-            currentRank.style.color = 'oragne';
-            handleName.style.color = 'orange';
-        }
-        else if (data.result[0].rating >= 1900) {
-            currentRating.style.color = 'violet';
-            currentRank.style.color = 'violet';
-            handleName.style.color = 'violet';
-        }
-        else if (data.result[0].rating >= 1600) {
-            currentRating.style.color = 'blue';
-            currentRank.style.color = 'blue';
-            handleName.style.color = 'blue';
-        }
-        else if (data.result[0].rating >= 1400) {
-            currentRating.style.color = 'cyan';
-            currentRank.style.color = 'cyan';
-            handleName.style.color = 'cyan';
-        }
-        else if (data.result[0].rating >= 1200) {
-            currentRating.style.color = 'green';
-            currentRank.style.color = 'green';
-            handleName.style.color = 'green';
-        }
-        else {
-            currentRating.style.color = 'gray';
-            currentRank.style.color = 'gray';
-            handleName.style.color = 'gray';
-        }
+        checkCurrentRating(data.result[0]);
+        checkMaxRating(data.result[0].maxRating);
+
         // const handleName = document.getElementById('handle-name');
         // const fullName = document.getElementById('full-name');
         // const maxRating = document.getElementById('max-rating');
