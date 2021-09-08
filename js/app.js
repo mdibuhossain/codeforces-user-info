@@ -100,11 +100,11 @@ const processDatatoUI = data => {
             </div>
             <div class="mx-3">
                 <div class="mt-md-0 mt-4">
+                    <p class="fs-3 m-0">Rank: <span id="current-rank" class="text-capitalize"><strong>${data.result[0].rank}</strong></span></p>
                     <p class="fs-3 m-0">Handle: <span id="handle-name"><strong>${data.result[0].handle}</strong></span></p>
                     <p class="fs-3 m-0">Name: <span id="full-name">${data.result[0].firstName + ' ' + data.result[0].lastName}</span></p>
                     <p class="fs-3 m-0">Max rating: <span id="max-rating"><strong>${data.result[0].maxRating}</strong></span></p>
                     <p class="fs-3 m-0">Current rating: <span id="current-rating"><strong>${data.result[0].rating}</strong></span></p>
-                    <p class="fs-3 m-0">Rank: <span id="current-rank"><strong>${data.result[0].rank}</strong></span></p>
                     <p class="fs-3 m-0">Organization: <span id="organization-name">${data.result[0].organization}</span></p>
                     <!-- <p class="fs-3 m-0">Friends: <span id="total-friends">${data.result[0].friendOfCount}</span></p> -->
                     <p class="fs-3 m-0">Country: <span id="country-name">${data.result[0].country}</span></p>
